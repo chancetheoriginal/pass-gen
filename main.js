@@ -15,6 +15,7 @@ genPassword();
 let copyText = document.querySelector('.password').innerText;
 let copiedSp = document.getElementById('copied');
 function copyPass() {
+    navigator.clipboard.writeText('');
     navigator.clipboard.writeText(copyText);
     copiedSp.innerText = "Pass copied to clipboard";
     console.log(copiedSp.innerText);
