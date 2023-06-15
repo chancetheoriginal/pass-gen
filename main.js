@@ -12,12 +12,12 @@ function genPassword() {
 }
 genPassword();
 
-let copyText = document.querySelector('.password').innerText;
-let copiedSp = document.getElementById('copied');
 function copyPass() {
-    navigator.clipboard.writeText('');
+    let copyText = document.querySelector('.password').innerText;
+    let copiedSp = document.getElementById('copied');
+    
     navigator.clipboard.writeText(copyText);
-    copiedSp.innerText = "Pass copied to clipboard";
+    copiedSp.innerText = `${copyText} copied to clipboard`;
     console.log(copiedSp.innerText);
     setTimeout(() => {
         copiedSp.innerText = "";
