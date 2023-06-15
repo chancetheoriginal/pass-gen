@@ -1,3 +1,5 @@
+/////// Pass gen / copy 
+
 let password = '';
 
 function genPassword() {
@@ -30,3 +32,25 @@ btnRefresh.addEventListener('click', genPassword);
 
 const btnCopy = document.getElementById('btn-copy');
 btnCopy.addEventListener('click', copyPass);
+
+/////// Utils
+
+const btn = document.querySelectorAll('.btn');
+
+
+btn.forEach(btn => {
+    //hover
+    let input = '';
+    btn.addEventListener('mouseover', () => {
+        btn.classList.add('hover');
+    });
+    btn.addEventListener('mouseout', () => {
+        btn.classList.remove('hover');
+        btn.classList.remove('active');
+    });
+    //click
+    btn.addEventListener('mousedown' || 'click' ||'touchstart', () => {
+        btn.classList.remove('hover');
+        btn.classList.add('active');
+    });
+})

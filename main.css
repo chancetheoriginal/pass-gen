@@ -54,17 +54,19 @@ main{
     border: 2px solid;
     border-image-slice: 1;
     border-width: 2px;    
-    transition: all 0.3s;
+    transition: all 0.3s ease-in-out;
     border-image-source: linear-gradient(to left, var(--teal), var(--purple));
     background-image: none;
 }
-.btn:hover, .btn:focus{
+.hover{
+    /* color: var(--bg); */
     transform: scale(105%);
     /* -webkit-box-shadow: 0 10px 20px rgba(109, 109, 109, 0.16) !important;
     box-shadow: 0 10px 20px var(--)) !important; */
 }
-.btn:active{
+.active{
     color: var(--bg);
+    transform: scale(105%);
     background-image: linear-gradient(to left, var(--teal), var(--purple));
 }
 .copied{
