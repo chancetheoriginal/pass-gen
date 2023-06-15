@@ -1,27 +1,26 @@
+let password = '';
+
 function genPassword() {
-    const chars = "0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const chars = '0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    password = '';
     const passwordLength = 16;
-    let password = "";
     const passEl = document.querySelector('.password')
 
     for (let i = 0; i <= passwordLength; i++) {
         let randomNumber = Math.floor(Math.random() * chars.length);
-        password  += chars.substring(randomNumber, randomNumber +1);
+        password += chars.substring(randomNumber, randomNumber +1);
     }
     passEl.innerText = password;
 }
 genPassword();
-
 function copyPass() {
-    let copyText = document.querySelector('.password').innerText;
+    // let copyText = document.querySelector('.password').innerText;
     let copiedSp = document.getElementById('copied');
     
-    navigator.clipboard.writeText(copyText);
-    copiedSp.innerText = `${copyText} copied to clipboard`;
-    console.log(copiedSp.innerText);
+    navigator.clipboard.writeText(password);
+    copiedSp.innerText = `${password} copied to clipboard`;
     setTimeout(() => {
         copiedSp.innerText = "";
-        console.log(copiedSp.innerText);
     }, '3000');
     
 } 
