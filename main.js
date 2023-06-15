@@ -41,16 +41,15 @@ const btn = document.querySelectorAll('.btn');
 btn.forEach(btn => {
     //hover
     let input = '';
-    btn.addEventListener('mouseover', () => {
+    btn.addEventListener('mouseover' || 'touchstart', () => {
         btn.classList.add('hover');
     });
-    btn.addEventListener('mouseout', () => {
-        btn.classList.remove('hover');
-        btn.classList.remove('active');
-    });
-    //click
     btn.addEventListener('mousedown' || 'click' ||'touchstart', () => {
         btn.classList.remove('hover');
         btn.classList.add('active');
+    });
+    btn.addEventListener('mouseout' || 'touchend', () => {
+        btn.classList.remove('hover');
+        btn.classList.remove('active');
     });
 })
